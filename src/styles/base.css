@@ -1,0 +1,10 @@
+@layer base {
+  :root {
+    --color-grey-90: #333333;
+    --color-grey-50: #555555;
+    --color-grey-45: #444444;
+    --color-grey-30: #666666;
+    --color-black: #000000;
+    --color-white: #ffffff;
+  }
+}

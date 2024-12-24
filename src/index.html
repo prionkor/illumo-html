@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Illumo 1.0 alpha</title>
+    <link rel="stylesheet" href="styles/main.min.css" />
+  </head>
+  <body>
+    <div class="bg-grey-90 h-screen w-full flex flex-col">
+      <header>
+        <div class="flex px-2 h-8 bg-grey-50">
+          <div class="logo w-16 mx-2">
+            <!-- <img src="images/illumo-logo.svg" alt="Illumo" class="object-cover" /> -->
+          </div>
+          <div class="w-px bg-grey-45 mx-2 h-full"></div>
+          <menu class="h-full">
+            <ul class="flex mx-2 align-middle justify-center h-full">
+              <li><a class="pl-0 px-4 py-1 block" href="#">File</a></li>
+              <li><a class="pl-0 px-4 py-1 block" href="#">Edit</a></li>
+              <li><a class="pl-0 px-4 py-1 block" href="#">Object</a></li>
+            </ul>
+          </menu>
+        </div>
+        <div id="object-config" class="flex px-2 h-8 bg-grey-50 mt-px"></div>
+      </header>
+      <section class="flex mt-px gap-px flex-grow">
+        <aside class="w-16 bg-grey-45">
+          <header class="bg-grey-50 h-5 border-b-grey-90 border-b-1"></header>
+          <div class="flex flex-wrap">
+            <button
+              class="flex justify-center items-center w-8 h-8 hover:bg-grey-50 object-fill"
+            >
+              <img src="images/icons/select-object.svg" />
+            </button>
+            <button
+              class="flex justify-center items-center w-8 h-8 hover:bg-grey-50"
+            >
+              <img src="images/icons/select-path.svg" />
+            </button>
+            <button
+              class="pt-[3px] flex justify-center items-center w-8 h-8 hover:bg-grey-50"
+            >
+              <img src="images/icons/pen.svg" />
+            </button>
+            <button
+              class="pt-[5px] flex justify-center items-center w-8 h-8 hover:bg-grey-50"
+            >
+              <img src="images/icons/rec.svg" />
+            </button>
+            <button
+              class="pt-[5px] flex justify-center items-center w-8 h-8 object-contain hover:bg-grey-50"
+            >
+              <img src="images/icons/circle.svg" />
+            </button>
+            <button
+              class="pt-[4px] pl-px flex justify-center items-center w-8 h-8 hover:bg-grey-50"
+            >
+              <img src="images/icons/line.svg" />
+            </button>
+            <button
+              class="pt-[5px] flex justify-center items-center w-8 h-8 hover:bg-grey-50"
+            >
+              <img src="images/icons/text.svg" />
+            </button>
+            <button
+              class="flex justify-center items-center w-8 h-8 hover:bg-grey-50"
+            >
+              <img src="images/icons/eye-dropper.svg" />
+            </button>
+          </div>
+          <div class="relative p-2">
+            <div
+              id="fill-color"
+              class="absolute w-8 h-8 bg-white border-black border-1"
+            ></div>
+            <div
+              id="stroke-color"
+              class="absolute w-8 h-8 mt-4 ml-4 bg-grey-90 border-black border-8 shadow-[0_0_0_1px_rgb(255,255,255)] before:absolute before:bg-grey-90 before:w-4 before:h-4 before:border before:border-white"
+            ></div>
+          </div>
+        </aside>
+        <main class="flex-1 flex flex-col">
+          <header class="bg-grey-50 border-b-grey-90 border-b-1 py-1 px-2">
+            My Artwork
+          </header>
+
+          <article
+            class="bg-grey-45 flex items-center justify-center flex-1 overflow-scroll"
+          >
+            <div id="artboard" class="w-[1000px] h-[600px]">
+              <canvas class="bg-white" width="1000" height="600"></canvas>
+            </div>
+          </article>
+        </main>
+        <aside class="w-80 flex flex-col">
+          <header class="bg-grey-50 border-b-grey-90 border-b-1 py-1 px-2">
+            Layers
+          </header>
+
+          <article class="bg-grey-45 flex-1">
+            <!-- Layer Start -->
+            <div>
+              <section class="bg-grey-30 mb-px flex h-16 items-stretch">
+                <button class="w-9 pl-2 pr-2">
+                  <img class="w-9 h-9" src="./images/icons/eye.svg" />
+                </button>
+                <!-- Layer Dynamic Preview -->
+                <div class="w-16 bg-grey-20"></div>
+                <div class="flex flex-1 p-2 items-center">Layer 1</div>
+                <button class="w-9 pl-2 pr-2">
+                  <img class="w-9 h-9" src="./images/icons/eye.svg" />
+                </button>
+              </section>
+              <div class="pl-4">
+                <section class="bg-grey-30 mb-px flex h-16 items-stretch">
+                  <button class="w-9 pl-2 pr-2">
+                    <img class="w-9 h-9" src="./images/icons/eye.svg" />
+                  </button>
+                  <!-- Layer Dynamic Preview -->
+                  <div class="w-16 bg-grey-20"></div>
+                  <div class="flex flex-1 p-2 items-center">SubLayer 1</div>
+                  <button class="w-9 pl-2 pr-2">
+                    <img class="w-9 h-9" src="./images/icons/eye.svg" />
+                  </button>
+                </section>
+                <section class="bg-grey-30 mb-px flex h-16 items-stretch">
+                  <button class="w-9 pl-2 pr-2">
+                    <img class="w-9 h-9" src="./images/icons/eye.svg" />
+                  </button>
+                  <!-- Layer Dynamic Preview -->
+                  <div class="w-16 bg-grey-20"></div>
+                  <div class="flex flex-1 p-2 items-center">SubLayer 2</div>
+                  <button class="w-9 pl-2 pr-2">
+                    <img class="w-9 h-9" src="./images/icons/eye.svg" />
+                  </button>
+                </section>
+                <section class="bg-grey-30 mb-px flex h-16 items-stretch">
+                  <button class="w-9 pl-2 pr-2">
+                    <img class="w-9 h-9" src="./images/icons/eye.svg" />
+                  </button>
+                  <!-- Layer Dynamic Preview -->
+                  <div class="w-16 bg-grey-20"></div>
+                  <div class="flex flex-1 p-2 items-center">SubLayer 3</div>
+                  <button class="w-9 pl-2 pr-2">
+                    <img class="w-9 h-9" src="./images/icons/eye.svg" />
+                  </button>
+                </section>
+              </div>
+            </div>
+            <!-- Layer End -->
+            <div>
+              <section class="bg-grey-30 mb-px flex h-16 items-stretch">
+                <button class="w-9 pl-2 pr-2">
+                  <img class="w-9 h-9" src="./images/icons/eye.svg" />
+                </button>
+                <!-- Layer Dynamic Preview -->
+                <div class="w-16 bg-grey-20"></div>
+                <div class="flex flex-1 p-2 items-center">Layer 2</div>
+                <button class="w-9 pl-2 pr-2">
+                  <img class="w-9 h-9" src="./images/icons/eye.svg" />
+                </button>
+              </section>
+            </div>
+          </article>
+        </aside>
+      </section>
+    </div>
+  </body>
+</html>

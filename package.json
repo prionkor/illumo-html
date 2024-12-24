@@ -1,0 +1,12 @@
+{
+  "name": "Illumo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/styles/main.css -o ./src/styles/main.min.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  }
+}
